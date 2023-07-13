@@ -1,0 +1,1 @@
+kubectl delete secrets --all && kubectl delete all --all && kubectl delete ingress --all
