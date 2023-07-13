@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: django-deployment
+  name: flask-app-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: django
+      app: flask-app
   template:
     metadata:
       labels:
-        app: django
+        app: flask-app
     spec:
       containers:
-        - name: django
-          image: hardokkerdocker/hvalfangst:django
+        - name: flask-app
+          image: hardokkerdocker/hvalfangst:flask-app
           ports:
             - containerPort: 5000
 ---

@@ -1,12 +1,16 @@
 # Build docker image
-  echo "[Building image [django] from Dockerfile]"
-  if ! docker build -t hardokkerdocker/hvalfangst:django .; then
+  echo "[Building image [flask-app] from Dockerfile]"
+  if ! docker build -t hardokkerdocker/hvalfangst:flask-app .; then
     echo
-    echo "[Error building image 'django' - Exiting script]"
+    echo "[Error building image 'flask-app' - Exiting script]"
     exit 1
   else
     echo -e "\n\n"
   fi
+
+
+# Create the certs folder if it doesn't exist
+mkdir -p certs
 
 # Generate private key and certificate
 openssl req -newkey rsa:4096 -nodes -keyout certs/tls.key -x509 -days 365 -out certs/tls.crt -subj "//CN=Hvalfangst AS"

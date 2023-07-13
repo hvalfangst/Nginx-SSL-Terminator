@@ -4,8 +4,8 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def tls_metadata():
-    return "TLS Metadata"
+def meet_and_greet():
+    return "Meet-and-greet with interdimensional kinsmen is not for the faint of heart"
 
 
 if __name__ == '__main__':
